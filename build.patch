@@ -1,0 +1,11 @@
+--- fss-parallel-tools/Makefile~	2019-03-15 18:43:43.000000000 +0100
++++ fss-parallel-tools/Makefile	2019-05-30 13:03:57.060482377 +0200
+@@ -16,7 +16,7 @@ CPPFLAGS=-DVERSION=\"$(VERSION)\"
+ # It turns out that we need -lrt (probably because of clock_gettime()
+ # or else we'll end up with a dependency on glibc 2.17, which often is
+ # too advanced (e.g., on Oracle Linux 6.9)
+-LDLIBS=-lrt
++LDLIBS=-lrt -pthread
+ LDFLAGS=-pthread $(SAN) $(GCOV_FLAGS)
+ 
+ VALGRIND = valgrind --leak-check=full --error-exitcode=3 -q
