@@ -18,7 +18,7 @@ Parallel tar, rm and cp utilities
 rpm2cpio %{SOURCE0} | cpio -dim
 tar xf *.tar.gz
 cd %{name}
-%patch0 -p1
+%patch -P0 -p1
 
 %build
 %{__make} -C %{name} \
